@@ -1,0 +1,20 @@
+$(function($){
+$("form").submit(function(event){
+	event.preventDefault();
+	$.ajax({
+		url:"https://formspree.io/tan.cholee13@gmail.com",
+		methode:"POST",
+		data:{
+			name:$("#name").val(),
+			email:$("#email").val()
+		},
+		dataType:"json"
+	}).done(function(){
+		$("#name").val("");
+		$("#email").val("");
+		alert("sukeses");
+	}).fail(function(){
+		alert("error");
+	});
+});
+});
